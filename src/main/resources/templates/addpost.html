@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+
+    <!-- <link rel="stylesheet" href="style/head.css">
+    <link rel="stylesheet" href="style/profile.css">
+    <link rel="stylesheet" href="style/btn.css"> -->
+    <title>add post</title>
+    <style>
+        body {
+            margin: 0;
+            background: #f7f7f7;
+        }
+
+        #header {
+            background: white;
+            border: 1px solid #ccc;
+            height: 50px;
+        }
+
+        #header>.center {
+            margin: 2px;
+        }
+
+        .form-inline {
+            /* border: 1px solid #ccc; */
+            padding: 0 20px;
+            border-radius: 30px;
+        }
+
+        .form-control {
+            direction: rtl;
+            background-image: linear-gradient(0deg, #97386d 2px, rgba(0, 150, 136, 0) 0), linear-gradient(0deg, rgba(0, 0, 0, .26) 1px, transparent 0);
+            width: 97%;
+        }
+
+
+        #footer {
+            /* border: 1px solid #ccc; */
+            height: 80px;
+        }
+
+        #content {
+            /* margin: 80px 60px 0; */
+            margin: 100px 2rem 0;
+        }
+
+
+        .main {
+            background: #FFF;
+            position: relative;
+            /* z-index: 3; */
+        }
+
+        .main-raised {
+            /* margin: 100px 30px 0; */
+            border-radius: 6px;
+            box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+        }
+
+        .profile-page .profile {
+            text-align: center;
+            max-width: 400px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .profile-page .profile img {
+            max-width: 160px;
+            width: 100%;
+            /* margin: 0 auto; */
+            -webkit-transform: translate3d(0, -50%, 0);
+            -moz-transform: translate3d(0, -50%, 0);
+            -o-transform: translate3d(0, -50%, 0);
+            -ms-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+        }
+
+        .img-raised {
+            box-shadow: 0 5px 15px -8px rgba(0, 0, 0, .24), 0 8px 10px -5px rgba(0, 0, 0, .2);
+        }
+
+        .rounded-circle {
+            border-radius: 50% !important;
+        }
+
+        .img-fluid,
+        .img-thumbnail {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .title {
+            margin-top: 30px;
+            margin-bottom: 25px;
+            min-height: 32px;
+            color: #3C4858;
+            font-weight: 700;
+            font-family: "Roboto Slab", "Times New Roman", serif;
+        }
+
+        .profile-page .description {
+            margin: 1.071rem auto 0;
+            max-width: 600px;
+            color: #999;
+            font-weight: 300;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 0 0 10px;
+        }
+
+        .profile-page .profile-tabs {
+            margin-top: 4.284rem;
+
+        }
+
+        .nav-pills,
+        .nav-tabs {
+            border: 0;
+            border-radius: 3px;
+            padding: 0 15px;
+        }
+
+        .nav .nav-item {
+            position: relative;
+            margin: 0 2px;
+        }
+
+        .nav-pills.nav-pills-icons .nav-item .nav-link {
+            border-radius: 4px;
+        }
+
+        .nav-pills .nav-item .nav-link.active {
+            color: #fff;
+            background-color: #fa33a0;
+            box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2), 0 13px 24px -11px rgba(156, 39, 176, .6);
+        }
+
+        .nav-pills .nav-item .nav-link {
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: 500;
+            min-width: 100px;
+            color: #555;
+            transition: all .3s;
+            border-radius: 30px;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        .nav-pills .nav-item .nav-link:not(.active):hover {
+            background-color: rgba(200, 200, 200, .2);
+        }
+
+
+        .nav-pills .nav-item i {
+            display: block;
+            font-size: 30px;
+            padding: 15px 0;
+        }
+
+        .tab-space {
+            padding: 20px 0 50px;
+        }
+
+        .profile-page .gallery {
+            margin-top: 3.213rem;
+            padding-bottom: 50px;
+        }
+
+        .profile-page .gallery img {
+            width: 100%;
+            /* margin-bottom: 2.142rem; */
+            margin-bottom: 2px;
+        }
+
+        .profile-page .profile .name {
+            margin-top: -80px;
+        }
+
+        img.rounded {
+            border-radius: 6px !important;
+        }
+
+        .tab-content>.active {
+            display: block;
+        }
+
+        .labels {
+            text-align: right;
+            direction: rtl;
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-control {
+            direction: rtl;
+            border-color: #fa33a0;
+
+        }
+
+        input {
+            font-family: normal;
+        }
+
+        @font-face {
+            font-family: Vazir;
+            font-style: normal;
+            font-weight: normal;
+            src: url('../fonts/Vazir.eot');
+            src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+                url('../fonts/Vazir.woff2') format('woff2'),
+                url('../fonts/Vazir.woff') format('woff'),
+                url('../fonts/Vazir.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: Vazir;
+            font-style: normal;
+            font-weight: bold;
+            src: url('../fonts/Vazir-Bold.eot');
+            src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+                url('../fonts/Vazir-Bold.woff2') format('woff2'),
+                url('../fonts/Vazir-Bold.woff') format('woff'),
+                url('../fonts/Vazir-Bold.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'Vazir', Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        /*buttons*/
+        #addbtn {
+            color: #fff;
+            background-color: #fa33a0;
+            box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2), 0 13px 24px -11px rgba(156, 39, 176, .6);
+            border-radius: 7px;
+            flex-direction: row-reverse
+        }
+
+        .btn {
+            position: relative;
+            /* padding: 12px 30px; */
+            margin: .3125rem 1px;
+            /* font-size: .75rem; */
+            /* font-weight: 400; */
+            line-height: 1.428571;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            border: 0;
+            border-radius: .2rem;
+            outline: 0;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1);
+            will-change: box-shadow, transform;
+        }
+
+        .btn.btn-just-icon {
+            font-size: 20px;
+            height: 41px;
+            min-width: 41px;
+            width: 41px;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            line-height: 41px;
+        }
+
+        .btn.btn-just-icon fa {
+            margin-top: 0;
+            position: absolute;
+            width: 100%;
+            transform: none;
+            left: 0;
+            top: 0;
+            height: 100%;
+            line-height: 41px;
+            font-size: 20px;
+        }
+
+        .btn.btn-link {
+            background-color: transparent;
+            color: #999;
+        }
+
+        input {
+            font-family: 'Vazir', Arial, sans-serif;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <div id="header">
+        <div class="center">
+            <div class="holder">
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top "
+                    style="background-color:#fff;text-align: right; direction: rtl;">
+
+
+                    <!-- <ul class=" navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item "> -->
+                    <a class="nav-link" style="color: black;" href="login.html">ورود/ثبت نام
+                    </a>
+                    <!-- </li>
+                        </ul> -->
+
+                    <a class="navbar-brand align-top mt-auto mb-auto" href="#" style="text-align: right;">
+                        <img src="img/Capture.PNG" width="35" height="35" class="d-inline-block align-top ml-2" alt=""
+                            style="border-radius: 20px;">
+                        <p class="d-inline-block mt-auto mb-auto">نام سایت</p>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="direction: rtl;">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="جستجو...">
+                            <button class="btn  my-2 my-sm-0" type="submit">
+                                <span class="fa fa-search"></span>
+                            </button>
+                        </form>
+
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">صفحه اصلی <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="dropdown mr-2 ml-2 mt-1">
+                                <!-- class="dropdown-toggle" -->
+                                <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" style="color: black;">
+                                    <img src="https://img.icons8.com/material-outlined/24/000000/male-user.png"
+                                        style="width: 25px; " />
+                                    <p style="display: inline-block;">پروفایل</p>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="profile.html">پروفایل </a>
+                                    <a class="dropdown-item" href="editprofile.html"> ویرایش پروفایل </a>
+                                    <a class="dropdown-item" href="login.html">خروج از حساب کاربری </a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">دوستان</a>
+                            </li>
+                            <li class="dropdown mr-2 ml-2 mt-1">
+                                <!-- class="dropdown-toggle" -->
+                                <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" style="color: black;">
+                                    <p style="display: inline-block;">سایر</p>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">تنظیمات </a>
+                                    <a class="dropdown-item" href="#"> نوتیفیکیشن ها </a>
+                                    <!-- <a class="dropdown-item" href="login.html"></a> -->
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+
+
+
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="content">
+        <div class="profile-page ">
+            <div class="main main-raised ">
+                <div class="profile-content">
+                    <div class="container">
+                        <div class=" justify-content-between ">
+                            <div class=" align-items-center back  mt-5">
+                                <a class="mt-5 pt-5" href="profile.html">
+                                    <p class="pt-5"> بازگشت </p>
+                                </a>
+                                <h4 class="text-right">افزودن پست جدید</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="d-flex flex-column align-items-left  p-3 py-5">
+                                    <img id='img-upload' class="mt-1" src="./img/sample-imgl.jpg" width="100%">
+                                    <div class="form-group" style="float: right;">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <span class="btn btn-default btn-file">
+
+                                                    <input type="file" id="imgInp">
+                                                </span>
+                                            </span>
+                                            <!-- <input type="text" class="form-control" readonly> -->
+                                        </div>
+                                        <!-- <img src="https://img.icons8.com/material-outlined/24/000000/add-image.png"/>
+                                        <img src="https://img.icons8.com/material-outlined/24/000000/filled-trash.png"/> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="p-3 py-5">
+                                    <div class="row mt-5">
+                                        <div class="col-md-12">
+                                            <label class="labels"> عنوان</label>
+                                            <input type="text" class="form-control"
+                                                placeholder="عنوانی برای پست خود وارد کنید" value="">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+
+                                        <div class="col-md-12">
+                                            <label class="labels">کپشن</label>
+                                            <input type="text" class="form-control" value=""
+                                                placeholder="کپشن مورد نظر را وارد کنید">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-5">
+                                        <div class="col-md-12">
+                                            <label class="labels">دسته بندی مورد نظر</label>
+                                            <select class="mdb-select md-form form-control" aria-multiselectable="true"
+                                                searchable="Search here..">
+                                                <option value="" disabled selected> انتخاب کنید</option>
+                                                <option value="1"> گل و گیاه</option>
+                                                <option value="2"> دکوراسیون</option>
+                                                <option value="3"> موبایل</option>
+                                                <option value="4"> طراحی لوگو</option>
+                                                <option value="5"> طراحی سایت</option>
+                                                <option value="6"> ایده های نو</option>
+                                                <option value="7"> اتومبیل </option>
+                                                <option value="8"> علم و دانش</option>
+                                                <option value="9"> کامپیوتر</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5 text-center">
+                                        <a href="profile.html" class="btn btn-primary profile-button" type="button"
+                                            id="addbtn"> لغو</a>
+                                        <a href="profile.html" class="btn btn-primary profile-button" type="button"
+                                            id="addbtn">ثبت و اشتراکگذاری</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="mt-5">
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(document).on('change', '.btn-file :file', function () {
+                var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [label]);
+            });
+            $('.btn-file :file').on('fileselect', function (event, label) {
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = label;
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+            });
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#img-upload').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imgInp").change(function () {
+                readURL(this);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <!-- <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/btn.css"> -->
+    <title>sign up</title>
+    <style>
+        @font-face {
+            font-family: Vazir;
+            font-style: normal;
+            font-weight: normal;
+            src: url('../fonts/Vazir.eot');
+            src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+                url('../fonts/Vazir.woff2') format('woff2'),
+                url('../fonts/Vazir.woff') format('woff'),
+                url('../fonts/Vazir.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: Vazir;
+            font-style: normal;
+            font-weight: bold;
+            src: url('../fonts/Vazir-Bold.eot');
+            src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+                url('../fonts/Vazir-Bold.woff2') format('woff2'),
+                url('../fonts/Vazir-Bold.woff') format('woff'),
+                url('../fonts/Vazir-Bold.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'Vazir', Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        /*buttons*/
+        #addbtn {
+            color: #fff;
+            background-color: #fa33a0;
+            box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2), 0 13px 24px -11px rgba(156, 39, 176, .6);
+            border-radius: 7px;
+            flex-direction: row-reverse
+        }
+
+        .btn {
+            position: relative;
+            /* padding: 12px 30px; */
+            margin: .3125rem 1px;
+            /* font-size: .75rem; */
+            /* font-weight: 400; */
+            line-height: 1.428571;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            border: 0;
+            border-radius: .2rem;
+            outline: 0;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1);
+            will-change: box-shadow, transform;
+        }
+
+        .btn.btn-just-icon {
+            font-size: 20px;
+            height: 41px;
+            min-width: 41px;
+            width: 41px;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            line-height: 41px;
+        }
+
+        .btn.btn-just-icon fa {
+            margin-top: 0;
+            position: absolute;
+            width: 100%;
+            transform: none;
+            left: 0;
+            top: 0;
+            height: 100%;
+            line-height: 41px;
+            font-size: 20px;
+        }
+
+        .btn.btn-link {
+            background-color: transparent;
+            color: #999;
+        }
+
+        input {
+            font-family: 'Vazir', Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        /* config.css */
+        :root {
+            --baseColor: #f8f9fa;
+        }
+
+        .align {
+            display: flex;
+            place-items: center;
+        }
+
+        :root {
+            --gridMaxWidth: 350px;
+            --gridWidth: 90%;
+        }
+
+        .grid1 {
+            border: #fa33a0;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 25px;
+            text-align: center;
+            direction: rtl;
+        }
+
+        .grid {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: var(--gridMaxWidth);
+            width: var(--gridWidth);
+            /* border: 1px solid #ff3299; */
+            border-radius: 25px;
+        }
+
+        /* helpers/hidden.css */
+        .hidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        /* helpers/icon.css */
+        :root {
+            --iconFill: var(--baseColor);
+        }
+
+        .icons {
+            display: none;
+        }
+
+        .icon {
+            display: inline-block;
+            fill: var(--iconFill);
+            font-size: 1rem;
+            height: 1em;
+            vertical-align: middle;
+            width: 1em;
+        }
+
+        /* layout/base.css */
+        :root {
+            --htmlFontSize: 100%;
+
+            --bodyBackgroundColor: #838383;
+
+            --bodyColor: var(--baseColor);
+            --bodyFontFamily: 'Open Sans';
+            --bodyFontFamilyFallback: sans-serif;
+            --bodyFontSize: 0.875rem;
+            --bodyFontWeight: 400;
+            --bodyLineHeight: 1.5;
+
+        }
+
+        * {
+            box-sizing: inherit;
+            direction: rtl;
+        }
+
+        html {
+            box-sizing: border-box;
+            font-size: var(--htmlFontSize);
+            height: 100%;
+            direction: rtl;
+        }
+
+        body {
+            background-color: var(--bodyBackgroundColor);
+            color: var(--bodyColor);
+            font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
+            font-size: var(--bodyFontSize);
+            font-weight: var(--bodyFontWeight);
+            height: 100%;
+            line-height: var(--bodyLineHeight);
+            margin: 0;
+            min-height: 100vh;
+            direction: rtl;
+        }
+
+        /* modules/anchor.css */
+        :root {
+            --anchorColor: #eee;
+        }
+
+        a {
+            color: var(--anchorColor);
+            outline: 0;
+            text-decoration: none;
+            direction: rtl;
+        }
+
+        a:focus,
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* modules/form.css */
+        :root {
+            --formFieldMargin: 0.875rem;
+        }
+
+        input {
+            background-image: none;
+            border: 0;
+            color: inherit;
+            font: inherit;
+            margin: 0;
+            outline: 0;
+            padding: 0;
+            transition: background-color 0.3s;
+            direction: rtl;
+        }
+
+        input[type='submit'] {
+            cursor: pointer;
+        }
+
+        .form {
+            margin: calc(var(--formFieldMargin) * -1);
+        }
+
+        .form input[type='password'],
+        .form input[type='text'],
+        .form input[type='submit'] {
+            width: 100%;
+        }
+
+        .form__field {
+            display: flex;
+            margin: var(--formFieldMargin);
+        }
+
+        .form__input {
+            flex: 1;
+        }
+
+        /* modules/login.css */
+        :root {
+            --loginBorderRadus: 5px;
+            --loginColor: rgb(61, 58, 58);
+
+            --loginInputBackgroundColor: #fff;
+            --loginInputHoverBackgroundColor: #fff;
+
+            --loginLabelBackgroundColor: #fff;
+
+            --loginSubmitBackgroundColor: #fa33a0;
+            --loginSubmitColor: #eee;
+            --loginSubmitHoverBackgroundColor: #ff0a91;
+        }
+
+        .login {
+            color: var(--loginColor);
+        }
+
+        .login label,
+        .login input[type='text'],
+        .login input[type='password'],
+        .login input[type='submit'] {
+            border-radius: var(--loginBorderRadus);
+            padding: 1rem;
+        }
+
+        .login label {
+            background-color: var(--loginLabelBackgroundColor);
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+        }
+
+        .login input[type='password'],
+        .login input[type='text'] {
+            background-color: var(--loginInputBackgroundColor);
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .login input[type='password']:focus,
+        .login input[type='password']:hover,
+        .login input[type='text']:focus,
+        .login input[type='text']:hover {
+            background-color: var(--loginInputHoverBackgroundColor);
+        }
+
+        .login input[type='submit'] {
+            background-color: var(--loginSubmitBackgroundColor);
+            color: var(--loginSubmitColor);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .login input[type='submit']:focus,
+        .login input[type='submit']:hover {
+            background-color: var(--loginSubmitHoverBackgroundColor);
+        }
+
+        /* modules/text.css */
+        :root {
+            --paragraphMarginBottom: 1.5rem;
+            --paragraphMarginTop: 1.5rem;
+        }
+
+        .text--right {
+            text-align: right;
+            color: #3b3739;
+            margin-right: 15px;
+            font-size: 10px;
+        }
+
+        .text--right a {
+            text-align: right;
+            color: #3b3739;
+            margin-right: 15px;
+        }
+
+        .form__field {
+            border-radius: 6px;
+            margin-top: 25px;
+            border: 1px solid #ccc;
+        }
+
+        .title {
+            direction: rtl;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            color: rgb(92, 87, 87);
+            width: 100%;
+        }
+
+        #subgogle:hover {
+            border: 1px solid #ff0a91;
+        }
+    </style>
+</head>
+
+<body class="align">
+    <div class="grid">
+        <div class="grid1">
+
+            <img src="img/Capture.PNG" width="45" height="45" class=" align-top text-center mb-5 " alt=""
+                style="border-radius: 20px;">
+            <h2 class="d-block title mb-5">خوش آمدید </h2>
+
+            <form action="https://httpbin.org/post" method="POST" class="form login">
+                <div class="form__field">
+                    <label for="login__email">
+                        <img src="https://img.icons8.com/material-outlined/24/535353/email-sign.png" />
+                        <!-- <span class="hidden">Username</span> -->
+                    </label>
+                    <input id="login__email" type="text" name="email" class="form__input" placeholder="ایمیل" required>
+                </div>
+                <div class="form__field">
+                    <label for="login__password">
+                        <img src="https://img.icons8.com/material-outlined/25/535353/private2.png" />
+                        <!-- <span class="hidden">Password</span> -->
+                    </label>
+                    <input id="login__password" type="password" name="password" class="form__input"
+                        placeholder="رمز عبور" required>
+                </div>
+                <div class="form__field">
+                    <label for="login__password2">
+                        <img src="https://img.icons8.com/material-outlined/25/535353/private2.png" />
+                        <!-- <span class="hidden">Password</span> -->
+                    </label>
+                    <input id="login__password2" type="password" name="password" class="form__input"
+                        placeholder="تکرار رمز عبور" required>
+                </div>
+
+                <div class="form__field">
+                    <input type="submit" value="ثبت نام">
+                </div>
+            </form>
+            <p class="text--right">حساب کاربری دارید? <a href="login.html">ورود</a>
+                <!-- <svg class="icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use>
+            </svg> -->
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -2,33 +2,47 @@ package com.example.pinterest.Model;
 
 import com.example.pinterest.Entity.Like;
 
-public class LikeModel
-{
+public class LikeModel {
 	private String Id;
 	private String UserId;
 	private String PostId;
 	private boolean Like;
 
-	public LikeModel (Like input)
-	{
+	public LikeModel(Like input) {
 		Id = input.getId();
 		UserId = input.getUserId();
 		PostId = input.getPostId();
-		Like = input.getLike();
+		Like = input.getIsLike();
 	}
 
-	public  String getId() {return Id;}
-	public void setId(String id) {Id = id;}
+	public String getId() {
+		return Id;
+	}
 
-	public  String getUserId() {return UserId;}
-	public void setUserId(String userid) {UserId = userid;}
+	public void setId(String id) {
+		Id = id;
+	}
 
-	public  String getPostId() {return PostId;}
-	public void setPostId(String postid) {PostId = postid;}
+	public String getUserId() {
+		return UserId;
+	}
 
-	public  boolean getLike() {
+	public void setUserId(String userid) {
+		UserId = userid;
+	}
+
+	public String getPostId() {
+		return PostId;
+	}
+
+	public void setPostId(String postid) {
+		PostId = postid;
+	}
+
+	public boolean getLike() {
 		return Like;
 	}
+
 	public void setLike(boolean like) {
 		Like = like;
 	}

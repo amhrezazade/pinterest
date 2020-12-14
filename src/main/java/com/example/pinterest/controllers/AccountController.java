@@ -16,12 +16,12 @@ import com.example.pinterest.Service.UserService;
 @RequestMapping({ "/accunt" })
 public class AccountController {
 
-    @RequestMapping({ "/signup" })
+    @RequestMapping({ "/login1" })
     public String login(final Model model) {
         return "login";
     }
 
-    @RequestMapping({ "/signup" })
+    @RequestMapping({ "/login2" })
     public String login(final Model model,UserModel u) {
        
         return "login";
@@ -31,15 +31,16 @@ public class AccountController {
     public String SignUp(Model model){
 
         model.addAttribute("UserSignUpModel", new signup());
-        return "register";
+        return "signup";
     }
 
 
     @PostMapping("/signupUser")
-    public String SignUp(@ModelAttribute signup user, Model model){
-
-
-        return "testtt";
+    public String SignUp(@ModelAttribute signup u, Model model){
+        System.out.println(u.getEmail());
+        System.out.println(u.getPass());
+        System.out.println(u.getPass2());
+        return "index";
     }
 
 }

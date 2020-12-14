@@ -6,31 +6,44 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="usercategory")
-public class UserCategory
-{
+@Table(name = "usercategorys")
+public class UserCategory {
 	@Id
-	@Column(name ="id")
+	@Column(name = "id")
 	private String Id;
 
-	@Column(name ="name")
+	@Column(name = "name")
 	private String Name;
 
-	@Column(name ="caption")
+	@Column(name = "caption")
 	private String Caption;
 
-	public UserCategory()
-	{
-		//init class...
+	public UserCategory() {
+		// init class...
 	}
 
-	public String getId() {return Id;}
-	public void setId(String id) {Id = id;}
+	public String getId() {
+		return Id;
+	}
 
-	public String getName() {return Name;}
-	public void setName(String name) {Name = name;}
+	public void setId(String id) {
+		Id = id;
+	}
 
-	public String getCaption() {return Caption;}
-	public void setCaption(String caption) {Caption = caption;}
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public String getCaption() {
+		return Caption;
+	}
+
+	public void setCaption(String caption) {
+		Caption = caption;
+	}
 
 }

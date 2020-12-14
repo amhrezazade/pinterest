@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import java.util.List;
+
 
 import com.example.pinterest.Model.UserModel;
 import com.example.pinterest.Model.signup;
-import com.example.pinterest.Service.UserService;
+
 
 @Controller
 @RequestMapping({ "/accunt" })

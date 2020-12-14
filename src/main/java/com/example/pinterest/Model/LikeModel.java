@@ -14,7 +14,7 @@ public class LikeModel
 		Id = input.getId();
 		UserId = input.getUserId();
 		PostId = input.getPostId();
-		Like = input.getLike();
+		Like = input.getIsLike();
 	}
 
 	public  String getId() {return Id;}

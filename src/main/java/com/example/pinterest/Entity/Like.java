@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="like")
+@Table(name ="likes")
 public class Like
 {
 	@Id
@@ -20,7 +20,7 @@ public class Like
 	private String PostId;
 
 	@Column(name ="like")
-	private boolean Like;
+	private boolean IsLike;
 
 	public Like()
 	{
@@ -36,7 +36,7 @@ public class Like
 	public String getPostId() {return PostId;}
 	public void setPostId(String postid) {PostId = postid;}
 
-	public Boolean getLike() {return Like;}
-	public void setLike(boolean like) {Like = like;}
+	public Boolean getIsLike() {return IsLike;}
+	public void setIsLike(boolean islike) {IsLike = islike;}
 
 }

@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="follows")
+@Table(name ="follow")
 public class Follow
 {
 	@Id

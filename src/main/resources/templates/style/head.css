@@ -1,0 +1,53 @@
+/* @font-face {
+    font-family: Vazir;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Vazir.eot');
+    src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/Vazir.woff2') format('woff2'), 
+    url('../fonts/Vazir.woff') format('woff'), 
+    url('../fonts/Vazir.ttf') format('truetype');
+   }
+   @font-face {
+    font-family: Vazir;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/Vazir-Bold.eot');
+    src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/Vazir-Bold.woff2') format('woff2'), 
+    url('../fonts/Vazir-Bold.woff') format('woff'), 
+    url('../fonts/Vazir-Bold.ttf') format('truetype');
+   }
+     */
+
+
+body {
+    margin: 0;
+    background: #f7f7f7;
+    /* font-family: 'Vazir', Arial, sans-serif;
+font-weight:normal; */
+}
+#header {
+    background: white;
+    border: 1px solid #ccc;
+    height: 50px;
+}
+#header>.center {
+    margin: 2px;
+}
+.form-inline{
+    /* border: 1px solid #ccc; */
+    padding:  0 20px;
+    border-radius: 30px;
+}
+.form-control{
+    direction: rtl; background-image: linear-gradient(0deg,#97386d 2px,rgba(0,150,136,0) 0),linear-gradient(0deg,rgba(0,0,0,.26) 1px,transparent 0);
+width: 97%;
+}
+
+
+#footer {
+    /* border: 1px solid #ccc; */
+    height: 80px;
+}
+

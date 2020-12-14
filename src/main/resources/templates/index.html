@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -15,33 +14,15 @@
        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-    <!-- <link rel="stylesheet" href="style/btn.css">
-    <link rel="stylesheet" href="style/head.css">
-    <link rel="stylesheet" href="style/profile.css"> -->
+
+<!--    -->
+    <link rel="stylesheet" type="text/css" media="all"  href="../../../main/resources/templates/style/head.css" th:href="@{./style/head}" >
+    <link rel="stylesheet" type="text/css" media="all"  href="./style/profile.css" th:href="@{./style/profile}" >
+    <link rel="stylesheet" type="text/css" media="all" href="../../../main/resources/templates/style/btn.css" th:href="@{./style/btn}" >
+
+
     <title>index</title>
     <style>
-                @font-face {
-            font-family: Vazir;
-            font-style: normal;
-            font-weight: normal;
-            src: url('../fonts/Vazir.eot');
-            src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'),
-                url('../fonts/Vazir.woff2') format('woff2'),
-                url('../fonts/Vazir.woff') format('woff'),
-                url('../fonts/Vazir.ttf') format('truetype');
-        }
-
-        @font-face {
-            font-family: Vazir;
-            font-style: normal;
-            font-weight: bold;
-            src: url('../fonts/Vazir-Bold.eot');
-            src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
-                url('../fonts/Vazir-Bold.woff2') format('woff2'),
-                url('../fonts/Vazir-Bold.woff') format('woff'),
-                url('../fonts/Vazir-Bold.ttf') format('truetype');
-        }
-
         body {
             font-family: 'Vazir', Arial, sans-serif;
             font-weight: normal;
@@ -290,8 +271,9 @@
                     </ul> -->
 
                     <a class="navbar-brand align-top mt-auto mb-auto" href="#" style="text-align: right;">
-                        <img src="img/Capture.PNG" width="35" height="35" class="d-inline-block align-top ml-2" alt=""
+                        <img src='./img/Capture.PNG' th:src="@{./img/Capture.PNG}" width="35" height="35" class="d-inline-block align-top ml-2" alt=""
                             style="border-radius: 20px;">
+
                         <p class="d-inline-block mt-auto mb-auto">نام سایت</p>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -322,13 +304,15 @@
                                     <p style="display: inline-block;">پروفایل</p>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="profile.html">پروفایل </a>
-                                    <a class="dropdown-item" href="editprofile.html"> ویرایش پروفایل </a>
-                                    <a class="dropdown-item" href="login.html">خروج از حساب کاربری </a>
+
+
+                                    <a class="dropdown-item"  href="profile.html" th:href="@{profile}">پروفایل </a>
+                                    <a class="dropdown-item"  href="editprofile.html" th:href="@{editprofile}"> ویرایش پروفایل </a>
+                                    <a class="dropdown-item" href="login.html" th:href="@{login}">خروج از حساب کاربری </a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="#">دوستان</a>
+                                <a class="nav-link "  href="list.html" th:href="@{list}">دوستان</a>
                             </li>
                             <li class="dropdown mr-2 ml-2 mt-1">
                                 <!-- class="dropdown-toggle" -->
@@ -390,7 +374,7 @@
                                             style="width: 40px;margin: 2px;float: right;border-radius: 20px;">
                                         <p style="float: right; padding: 10px;margin: 0;">علی امیدی</p>
                                         <p
-                                            style="float: left; padding: 10px; font-size: 10;color: rgb(160, 158, 158);margin: 0;">
+                                            style="float: left; padding: 10px; font-size: 10px;color: rgb(160, 158, 158);margin: 0;">
                                             دوروز پیش </p>
                                     </div>
                                     <img src='./img/18.jpg' class="img-responsive" style="width:100%" alt="Image">
@@ -413,7 +397,7 @@
                                             style="width: 40px;margin: 2px;float: right;border-radius: 20px;">
                                         <p style="float: right; padding: 10px;margin: 0;">علی امیدی</p>
                                         <p
-                                            style="float: left; padding: 10px; font-size: 10;color: rgb(160, 158, 158);margin: 0;">
+                                            style="float: left; padding: 10px; font-size: 10px;color: rgb(160, 158, 158);margin: 0;">
                                             دوروز پیش </p>
                                     </div>
                                     <img src='./img/24.jpg' class="img-responsive" style="width:100%" alt="Image">
@@ -438,7 +422,7 @@
                                             style="width: 40px;margin: 2px;float: right;border-radius: 20px;">
                                         <p style="float: right; padding: 10px;margin: 0;">علی امیدی</p>
                                         <p
-                                            style="float: left; padding: 10px; font-size: 10;color: rgb(160, 158, 158);margin: 0;">
+                                            style="float: left; padding: 10px; font-size: 10px;color: rgb(160, 158, 158);margin: 0;">
                                             دوروز پیش </p>
 
                                     </div>
@@ -462,7 +446,7 @@
                                             style="width: 40px;margin: 2px;float: right;border-radius: 20px;">
                                         <p style="float: right; padding: 10px;margin: 0;">علی امیدی</p>
                                         <p
-                                            style="float: left; padding: 10px; font-size: 10;color: rgb(160, 158, 158);margin: 0;">
+                                            style="float: left; padding: 10px; font-size:10px;color: rgb(160, 158, 158);margin: 0;">
                                             دوروز پیش </p>
                                     </div>
                                     <img src='./img/15.jpg' class="img-responsive" style="width:100%" alt="Image">
@@ -489,7 +473,7 @@
                                             style="width: 40px;margin: 2px;float: right;border-radius: 20px;">
                                         <p style="float: right; padding: 10px;margin: 0;">علی امیدی</p>
                                         <p
-                                            style="float: left; padding: 10px; font-size: 10;color: rgb(160, 158, 158);margin: 0;">
+                                            style="float: left; padding: 10px; font-size: 10px;color: rgb(160, 158, 158);margin: 0;">
                                             دوروز پیش </p>
 
                                     </div>
@@ -516,7 +500,7 @@
                                             style="width: 40px;margin: 2px;float: right;border-radius: 20px;">
                                         <p style="float: right; padding: 10px;margin: 0;">علی امیدی</p>
                                         <p
-                                            style="float: left; padding: 10px; font-size: 10;color: rgb(160, 158, 158);margin: 0;">
+                                            style="float: left; padding: 10px; font-size: 10px;color: rgb(160, 158, 158);margin: 0;">
                                             دوروز پیش </p>
                                     </div>
                                     <img src='./img/14.jpg' class="img-responsive" style="width:100%" alt="Image">
@@ -542,7 +526,7 @@
                                             style="width: 40px;margin: 2px;float: right;border-radius: 20px;">
                                         <p style="float: right; padding: 10px;margin: 0;">علی امیدی</p>
                                         <p
-                                            style="float: left; padding: 10px; font-size: 10;color: rgb(160, 158, 158);margin: 0;">
+                                            style="float: left; padding: 10px; font-size: 10px;color: rgb(160, 158, 158);margin: 0;">
                                             دوروز پیش </p>
 
                                     </div>
@@ -570,7 +554,7 @@
                                             style="width: 40px;margin: 2px;float: right;border-radius: 20px;">
                                         <p style="float: right; padding: 10px;margin: 0;">علی امیدی</p>
                                         <p
-                                            style="float: left; padding: 10px; font-size: 10;color: rgb(160, 158, 158);margin: 0;">
+                                            style="float: left; padding: 10px; font-size: 10px;color: rgb(160, 158, 158);margin: 0;">
                                             دوروز پیش </p>
 
                                     </div>

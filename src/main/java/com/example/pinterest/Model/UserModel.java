@@ -22,6 +22,11 @@ public class UserModel
 		Gender = input.getGender();
 		Address = input.getAddress();
 	}
+ public UserModel ()
+ {
+
+ }
+
 
 	public  String getId() {return Id;}
 	public void setId(String id) {Id = id;}
@@ -45,5 +50,6 @@ public class UserModel
 
 	public  String getAddress() {return Address;}
 	public void setAddress(String address) {Address = address;}
+
 
 }

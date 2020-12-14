@@ -1,0 +1,41 @@
+/* .bottom {
+    height: 50px;
+} */
+
+
+#content{
+    /* margin: 80px 60px 0; */
+    margin: 100px 2rem 0;
+}
+
+
+
+#menu2 {
+    /* border: 1px solid red; */
+    position: relative;
+    height: 50px;
+    width: 100%;
+    list-style: none;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+    font-family: Tahoma;
+}
+#menu2>li {
+    /* border: 1px solid red; */
+    width: 100px;
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+
+}
+#menu2>li:hover {
+    color: #fc10b5;
+    border-bottom: none;
+}
+
+

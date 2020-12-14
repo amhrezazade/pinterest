@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <!-- Required meta tags -->
@@ -364,9 +364,9 @@
                                     <p style="display: inline-block;">پروفایل</p>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="profile.html">پروفایل </a>
-                                    <a class="dropdown-item" href="editprofile.html"> ویرایش پروفایل </a>
-                                    <a class="dropdown-item" href="login.html">خروج از حساب کاربری </a>
+                                    <a class="dropdown-item"  href="profile.html" th:href="@{profile}">پروفایل </a>
+                                    <a class="dropdown-item"  href="editprofile.html" th:href="@{editprofile}"> ویرایش پروفایل </a>
+                                    <a class="dropdown-item" href="login.html" th:href="@{login}">خروج از حساب کاربری </a>
                                 </div>
                             </li>
                             <li class="nav-item">

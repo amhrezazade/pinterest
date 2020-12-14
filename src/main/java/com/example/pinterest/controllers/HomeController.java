@@ -44,7 +44,7 @@ public class HomeController {
             o += "Target : " + filename + "  - ";
             File file = new File(filename);
             o += "PATH OK - ";
-            byte[] fileContent = Files.readAllBytes(file.toPath());
+            Files.readAllBytes(file.toPath());
             o += "Arrey OK - ";
         } catch (Exception ex) {
             o += ex.getLocalizedMessage();

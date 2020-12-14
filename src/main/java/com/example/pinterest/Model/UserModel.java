@@ -22,10 +22,6 @@ public class UserModel
 		Gender = input.getGender();
 		Address = input.getAddress();
 	}
- public UserModel ()
- {
-
- }
 
 
 	public  String getId() {return Id;}

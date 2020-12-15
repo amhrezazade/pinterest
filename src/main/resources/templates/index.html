@@ -10,17 +10,12 @@
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <!-- Font Awesome CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
 
-<!--    -->
-    <link rel="stylesheet" type="text/css" media="all"  href="../../../main/resources/templates/style/head.css" th:href="@{./style/head}" >
-    <link rel="stylesheet" type="text/css" media="all"  href="./style/profile.css" th:href="@{./style/profile}" >
-    <link rel="stylesheet" type="text/css" media="all" href="../../../main/resources/templates/style/btn.css" th:href="@{./style/btn}" >
-
-
+<!--    <link rel="stylesheet" type="text/css" media="all"  href="../../../main/resources/templates/style/head.css" th:href="@{./style/head}" >-->
+<!--    <link rel="stylesheet" type="text/css" media="all"  href="./style/profile.css" th:href="@{./style/profile}" >-->
+<!--    <link rel="stylesheet" type="text/css" media="all" href="../../../main/resources/templates/style/btn.css" th:href="@{./style/btn}" >-->
     <title>index</title>
     <style>
         body {
@@ -55,14 +50,14 @@
             margin: 100px 2rem 0;
         }
         .main {
-            background: #FFF;
+            /*background: #FFF;*/
             position: relative;
             /* z-index: 3; */
         }
         .main-raised {
             /* margin: 100px 30px 0; */
-            border-radius: 6px;
-            box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+            /*border-radius: 6px;*/
+            /*box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);*/
         }
         .profile-page .profile {
             text-align: center;
@@ -261,19 +256,11 @@
             <div class="holder">
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top "
                     style="background-color:#fff;text-align: right; direction: rtl;">
-
-
-                    <!-- <ul class=" navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item "> -->
-                    <a class="nav-link" style="color: black;" href="login.html">ورود/ثبت نام
+                    <a class="nav-link" style="color: black;" href="/acc/login" th:href="@{/acc/login}">ورود/ثبت نام
                     </a>
-                    <!-- </li>
-                    </ul> -->
-
                     <a class="navbar-brand align-top mt-auto mb-auto" href="#" style="text-align: right;">
                         <img src='./img/Capture.PNG' th:src="@{./img/Capture.PNG}" width="35" height="35" class="d-inline-block align-top ml-2" alt=""
                             style="border-radius: 20px;">
-
                         <p class="d-inline-block mt-auto mb-auto">نام سایت</p>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -281,7 +268,6 @@
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="direction: rtl;">
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="جستجو...">
@@ -289,7 +275,6 @@
                                 <span class="fa fa-search"></span>
                             </button>
                         </form>
-
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li class="nav-item active">
                                 <a class="nav-link" href="index.html">صفحه اصلی <span
@@ -304,35 +289,26 @@
                                     <p style="display: inline-block;">پروفایل</p>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-
-
                                     <a class="dropdown-item"  href="profile.html" th:href="@{profile}">پروفایل </a>
-                                    <a class="dropdown-item"  href="editprofile.html" th:href="@{editprofile}"> ویرایش پروفایل </a>
-                                    <a class="dropdown-item" href="login.html" th:href="@{login}">خروج از حساب کاربری </a>
+                                    <a class="dropdown-item"  href="acc/editprofile" th:href="@{acc/editprofile}"> ویرایش پروفایل </a>
+                                    <a class="dropdown-item" href="/acc/login" th:href="@{/acc/login}">خروج از حساب کاربری </a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link "  href="list.html" th:href="@{list}">دوستان</a>
+                                <a class="nav-link "  href="./acc/folloerList" th:href="@{./acc/folloerList}">دوستان</a>
                             </li>
                             <li class="dropdown mr-2 ml-2 mt-1">
-                                <!-- class="dropdown-toggle" -->
-                                <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                <a class="" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false" style="color: black;">
                                     <p style="display: inline-block;">سایر</p>
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
                                     <a class="dropdown-item" href="#">تنظیمات </a>
                                     <a class="dropdown-item" href="#"> نوتیفیکیشن ها </a>
-                                    <!-- <a class="dropdown-item" href="login.html"></a> -->
                                 </div>
                             </li>
                         </ul>
-
                     </div>
-
-
-
-
                 </nav>
             </div>
         </div>

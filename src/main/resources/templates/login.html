@@ -371,22 +371,20 @@
             <img src="img/Capture.PNG" width="45" height="45" class=" align-top text-center mb-5 " alt=""
                 style="border-radius: 20px;">
             <h2 class="d-block title mb-5">خوش آمدید </h2>
-            <form action="https://httpbin.org/post" method="POST" class="form login">
+            <form action="/acc/loginUser" th:action="@{/acc/loginUser}" th:object="${UserLoginModel}"  method="POST" class="form login">
                 <div class="form__field">
                     <label for="login__username">
                         <img src="https://img.icons8.com/material-outlined/24/535353/user-male-circle.png" />
-                        <!-- <span class="hidden">Username</span> -->
                     </label>
-                    <input id="login__username" type="text" name="username" class="form__input" placeholder="نام کاربری"
+                    <input id="login__username" th:field="*{UserName}" type="text" name="username" class="form__input" placeholder="نام کاربری"
                         required>
                 </div>
 
                 <div class="form__field">
                     <label for="login__password">
                         <img src="https://img.icons8.com/material-outlined/25/535353/private2.png" />
-                        <!-- <span class="hidden">Password</span> -->
                     </label>
-                    <input id="login__password" type="password" name="password" class="form__input"
+                    <input id="login__password" th:field="*{Pass}" type="password" name="password" class="form__input"
                         placeholder="رمز عبور" required>
                 </div>
                 <p class="text--right">رمز عبور خود را فراموش کرده اید؟
@@ -399,14 +397,14 @@
                     <label for="login__username">
                         <img src="https://img.icons8.com/material/20/353535/google-logo--v1.png" />
                     </label>
-                    <a class="btn mt-2" style="background-color:rgb(255, 255, 255); color: rgb(92, 87, 87);"
+                    <a class="btn mt-2" style="background-color:rgb(255, 255, 255); color: rgb(92, 87, 87);" th:href="@{index.html}"
                         href="index.html">
                         ورود با حساب گوگل
                     </a>
                 </div>
             </form>
             <p class="text--right">هنوز ثبت نام نکرده اید?
-                <a href="signup.html">ثبت نام</a>
+                <a href="/acc/signup" th:href="@{/acc/signup}">ثبت نام</a>
             </p>
         </div>
     </div>

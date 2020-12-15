@@ -18,92 +18,6 @@
     <link rel="stylesheet" href="style/btn.css"> -->
     <title>sign up</title>
     <style>
-        @font-face {
-            font-family: Vazir;
-            font-style: normal;
-            font-weight: normal;
-            src: url('../fonts/Vazir.eot');
-            src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'),
-                url('../fonts/Vazir.woff2') format('woff2'),
-                url('../fonts/Vazir.woff') format('woff'),
-                url('../fonts/Vazir.ttf') format('truetype');
-        }
-
-        @font-face {
-            font-family: Vazir;
-            font-style: normal;
-            font-weight: bold;
-            src: url('../fonts/Vazir-Bold.eot');
-            src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
-                url('../fonts/Vazir-Bold.woff2') format('woff2'),
-                url('../fonts/Vazir-Bold.woff') format('woff'),
-                url('../fonts/Vazir-Bold.ttf') format('truetype');
-        }
-
-        body {
-            font-family: 'Vazir', Arial, sans-serif;
-            font-weight: normal;
-        }
-
-        /*buttons*/
-        #addbtn {
-            color: #fff;
-            background-color: #fa33a0;
-            box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2), 0 13px 24px -11px rgba(156, 39, 176, .6);
-            border-radius: 7px;
-            flex-direction: row-reverse
-        }
-
-        .btn {
-            position: relative;
-            /* padding: 12px 30px; */
-            margin: .3125rem 1px;
-            /* font-size: .75rem; */
-            /* font-weight: 400; */
-            line-height: 1.428571;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0;
-            border: 0;
-            border-radius: .2rem;
-            outline: 0;
-            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1);
-            will-change: box-shadow, transform;
-        }
-
-        .btn.btn-just-icon {
-            font-size: 20px;
-            height: 41px;
-            min-width: 41px;
-            width: 41px;
-            padding: 0;
-            overflow: hidden;
-            position: relative;
-            line-height: 41px;
-        }
-
-        .btn.btn-just-icon fa {
-            margin-top: 0;
-            position: absolute;
-            width: 100%;
-            transform: none;
-            left: 0;
-            top: 0;
-            height: 100%;
-            line-height: 41px;
-            font-size: 20px;
-        }
-
-        .btn.btn-link {
-            background-color: transparent;
-            color: #999;
-        }
-
-        input {
-            font-family: 'Vazir', Arial, sans-serif;
-            font-weight: normal;
-        }
-
         /* config.css */
         :root {
             --baseColor: #f8f9fa;
@@ -357,10 +271,6 @@
             color: rgb(92, 87, 87);
             width: 100%;
         }
-
-        #subgogle:hover {
-            border: 1px solid #ff0a91;
-        }
     </style>
 </head>
 
@@ -376,14 +286,12 @@
                 <div class="form__field">
                     <label for="login__email">
                         <img src="https://img.icons8.com/material-outlined/24/535353/email-sign.png" />
-                        <!-- <span class="hidden">Username</span> -->
                     </label>
                     <input id="login__email" th:field="*{Email}" type="text" name="email" class="form__input" placeholder="ایمیل" required>
                 </div>
                 <div class="form__field">
                     <label for="login__password">
                         <img src="https://img.icons8.com/material-outlined/25/535353/private2.png" />
-                        <!-- <span class="hidden">Password</span> -->
                     </label>
                     <input id="login__password" th:field="*{Pass}" type="password" name="password" class="form__input"
                         placeholder="رمز عبور" required>
@@ -391,7 +299,6 @@
                 <div class="form__field">
                     <label for="login__password2">
                         <img src="https://img.icons8.com/material-outlined/25/535353/private2.png" />
-                        <!-- <span class="hidden">Password</span> -->
                     </label>
                     <input id="login__password2" th:field="*{Pass2}" type="password" name="password" class="form__input"
                         placeholder="تکرار رمز عبور" required>
@@ -401,10 +308,7 @@
                     <input type="submit" value="ثبت نام">
                 </div>
             </form>
-            <p class="text--right">حساب کاربری دارید? <a href="login.html">ورود</a>
-                <!-- <svg class="icon">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use>
-            </svg> -->
+            <p class="text--right">حساب کاربری دارید? <a href="/acc/login" th:href="@{/acc/login}">ورود</a>
             </p>
         </div>
     </div>

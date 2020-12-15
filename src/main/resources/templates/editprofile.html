@@ -8,12 +8,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
-        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
-        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" type="text/css"
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+
     <!-- <link rel="stylesheet" href="style/head.css">
     <link rel="stylesheet" href="style/profile.css">
     <link rel="stylesheet" href="style/btn.css"> -->
@@ -217,28 +218,6 @@
             font-family: normal;
         }
 
-        @font-face {
-            font-family: Vazir;
-            font-style: normal;
-            font-weight: normal;
-            src: url('../fonts/Vazir.eot');
-            src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'),
-                url('../fonts/Vazir.woff2') format('woff2'),
-                url('../fonts/Vazir.woff') format('woff'),
-                url('../fonts/Vazir.ttf') format('truetype');
-        }
-
-        @font-face {
-            font-family: Vazir;
-            font-style: normal;
-            font-weight: bold;
-            src: url('../fonts/Vazir-Bold.eot');
-            src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
-                url('../fonts/Vazir-Bold.woff2') format('woff2'),
-                url('../fonts/Vazir-Bold.woff') format('woff'),
-                url('../fonts/Vazir-Bold.ttf') format('truetype');
-        }
-
         body {
             font-family: 'Vazir', Arial, sans-serif;
             font-weight: normal;
@@ -318,94 +297,75 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-        <div id="header">
-            <div class="center">
-                <div class="holder">
-                    <nav class="navbar navbar-expand-lg navbar-light fixed-top "
-                        style="background-color:#fff;text-align: right; direction: rtl;">
-    
-    
-                        <!-- <ul class=" navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item "> -->
-                                <a class="nav-link" style="color: black;" href="login.html">ورود/ثبت نام
-                                </a>
-                            <!-- </li>
-                        </ul> -->
-    
-                        <a class="navbar-brand align-top mt-auto mb-auto" href="#" style="text-align: right;">
-                            <img src="img/Capture.PNG" width="35" height="35" class="d-inline-block align-top ml-2" alt=""
-                                style="border-radius: 20px;">
-                            <p class="d-inline-block mt-auto mb-auto">نام سایت</p>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+    <div id="header">
+        <div class="center">
+            <div class="holder">
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top "
+                     style="background-color:#fff;text-align: right; direction: rtl;">
+                    <a class="nav-link" style="color: black;" href="/acc/login" th:href="@{/acc/login}">ورود/ثبت نام
+                    </a>
+                    <a class="navbar-brand align-top mt-auto mb-auto" href="#" style="text-align: right;">
+                        <img src='./img/Capture.PNG' th:src="@{./img/Capture.PNG}" width="35" height="35" class="d-inline-block align-top ml-2" alt=""
+                             style="border-radius: 20px;">
+                        <p class="d-inline-block mt-auto mb-auto">نام سایت</p>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                             aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-    
-                        <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="direction: rtl;">
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="جستجو...">
-                                <button class="btn  my-2 my-sm-0" type="submit">
-                                    <span class="fa fa-search"></span>
-                                </button>
-                            </form>
-    
-                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">صفحه اصلی <span
-                                            class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="dropdown mr-2 ml-2 mt-1">
-                                    <!-- class="dropdown-toggle" -->
-                                    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false" style="color: black;">
-                                        <img src="https://img.icons8.com/material-outlined/24/000000/male-user.png"
-                                            style="width: 25px; " />
-                                        <p style="display: inline-block;">پروفایل</p>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="profile.html">پروفایل </a>
-                                        <a class="dropdown-item" href="editprofile.html"> ویرایش پروفایل </a>
-                                        <a class="dropdown-item" href="login.html">خروج از حساب کاربری </a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="#">دوستان</a>
-                                </li>
-                                <li class="dropdown mr-2 ml-2 mt-1">
-                                    <!-- class="dropdown-toggle" -->
-                                    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false" style="color: black;">
-                                        <p style="display: inline-block;">سایر</p>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">تنظیمات </a>
-                                        <a class="dropdown-item" href="#"> نوتیفیکیشن ها </a>
-                                        <!-- <a class="dropdown-item" href="login.html"></a> -->
-                                    </div>
-                                </li>
-                            </ul>
-    
-                        </div>
-    
-    
-    
-    
-                    </nav>
-                </div>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="direction: rtl;">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="جستجو...">
+                            <button class="btn  my-2 my-sm-0" type="submit">
+                                <span class="fa fa-search"></span>
+                            </button>
+                        </form>
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">صفحه اصلی <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="dropdown mr-2 ml-2 mt-1">
+                                <!-- class="dropdown-toggle" -->
+                                <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false" style="color: black;">
+                                    <img src="https://img.icons8.com/material-outlined/24/000000/male-user.png"
+                                         style="width: 25px; " />
+                                    <p style="display: inline-block;">پروفایل</p>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item"  href="profile.html" th:href="@{profile}">پروفایل </a>
+                                    <a class="dropdown-item"  href="acc/editprofile.html" th:href="@{acc/editprofile}"> ویرایش پروفایل </a>
+                                    <a class="dropdown-item" href="/acc/login" th:href="@{/acc/login}">خروج از حساب کاربری </a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link "  href="./acc/followerList" th:href="@{./acc/followerList}">دوستان</a>
+                            </li>
+                            <li class="dropdown mr-2 ml-2 mt-1">
+                                <!-- class="dropdown-toggle" -->
+                                <a class="" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false" style="color: black;">
+                                    <p style="display: inline-block;">سایر</p>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                                    <a class="dropdown-item" href="#">تنظیمات </a>
+                                    <a class="dropdown-item" href="#"> نوتیفیکیشن ها </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
-    
+    </div>
 
     <div id="content">
         <div class="profile-page ">
             <div class="main main-raised ">
                 <div class="profile-content">
-
-                    
                     <div class="container">
-
                         <div class=" justify-content-between ">
                             <div class=" align-items-center back  mt-5">
                                 <a class="mt-5 pt-5" href="profile.html">
@@ -415,28 +375,20 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        <form action="/acc/editProfileUser" th:action="@{/acc/editProfileUser}" th:object="${editProfileModel}" method="post" class="row">
                             <div class="col-md-6">
                                 <div class="p-3 py-5">
-
-
                                     <div class="row mt-3">
                                         <div class="col-md-6">
                                             <label class="labels"> نام و نام خانوادگی</label>
-                                            <input type="text" class="form-control"
+                                            <input  th:field="*{Username}" type="text" class="form-control"
                                                 placeholder="  نام و نام خانوادگی     " value="">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="labels"> نام کاربری</label>
-                                            <input type="text" class="form-control" placeholder="...@" value="">
+                                            <input  type="text" class="form-control" placeholder="...@" value="">
                                         </div>
-
                                     </div>
-
-
-
-
-
                                     <div class="row  mt-5">
                                         <div class="col-md-12">
                                             <label class="labels">دسته بندی های مورد علاقه</label>
@@ -457,7 +409,7 @@
                                     <div class="row  mt-5">
                                         <div class="col-md-12">
                                             <label class="labels">متن توضیحات</label>
-                                            <input type="text" class="form-control" placeholder="بیو" value="">
+                                            <input th:field="*{Bio}" type="text" class="form-control" placeholder="بیو" value="">
                                         </div>
                                     </div>
                                     <div class="row mt-5">
@@ -466,19 +418,11 @@
                                             <input type="text" class="form-control"
                                                 placeholder="حوزه ی فعالیت خود را وارد کنید" value="">
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="col-md-6">
-
                                 <div class="p-3 py-5">
-
-
-
-
                                     <div class="row d-flex">
                                         <div class="col-md-8">
                                             <div class="row flex" style="text-align: right; direction: rtl;">
@@ -495,7 +439,6 @@
                                                                 <input type="file" id="imgInp">
                                                             </span>
                                                         </span>
-                                                        <!-- <input type="text" class="form-control" readonly> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -506,15 +449,12 @@
                                                 style="direction: rtl;float: right; border-radius: 45px;"
                                                 src="./img/sample-imgl.jpg">
                                         </div>
-
                                     </div>
-
-
                                     <div class="row mt-2">
                                         
                                         <div class="col-md-6">
                                             <label class="labels">سن </label>
-                                            <input type="text" class="form-control" value=""
+                                            <input th:field="*{Age}"  type="text" class="form-control" value=""
                                                 placeholder="سن خودرا به عدد وارد کنید ">
                                         </div>
 
@@ -527,25 +467,19 @@
                                             </select>
                                         </div>
                                     </div>
-
-
-
                                     <div class="row mt-5">
                                         <div class="col-md-6">
                                             <label class="labels">آدرس ایمیل</label>
-                                            <input type="text" class="form-control" value=""
+                                            <input th:field="*{Email}" type="text" class="form-control" value=""
                                                 placeholder="google@gmail.com ">
                                         </div>
 
                                         <div class="col-md-6">
-                                            <label class="labels">شماره تلفن</label>
-                                            <input type="text" class="form-control" placeholder="    --- --- ----98+  "
+                                            <label  class="labels">شماره تلفن</label>
+                                            <input th:field="*{PhoneNumber}" type="text" class="form-control" placeholder="    --- --- ----98+  "
                                                 value="">
                                         </div>
                                     </div>
-
-
-
                                     <div class="row mt-5">
                                         <div class="col-md-6"><label class="labels">کشور</label>
                                             <select class="mdb-select md-form form-control">
@@ -564,7 +498,6 @@
                                                 <option value="3"> سومالی</option>
                                             </select>
                                         </div>
-
                                         <div class="col-md-6">
                                             <label class="labels">شهر/ناحیه</label>
                                             <select class="mdb-select md-form form-control">
@@ -585,7 +518,7 @@
                                         </div>
                                     </div>
                                     <div class="row m-6 text-center mt-5">
-                                        <button class="btn btn-primary mr-2 profile-button" id="addbtn" type="button">
+                                        <button class="btn btn-primary mr-2 profile-button" id="addbtn" type="submit">
                                             ذخیره
                                         </button>
                                         <button class="btn btn-primary profile-button" id="addbtn" type="button">
@@ -593,31 +526,19 @@
                                         </button>
                                     </div>
                                 </div>
-
                             </div>
-
-                        </div>
-
-                        <!-- <div class="row mb-5">
-                            <div class="text-center">
-                                <a href="profile.html" class="btn btn-primary profile-button" type="button" id="addbtn">
-                                    لغو</a>
-                                <a href="profile.html" class="btn btn-primary profile-button" type="button"
-                                    id="addbtn">ثبت و اشتراکگذاری</a>
-                            </div>
-                        </div> -->
-
-
+                        </form>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
+
+        <div id="footer">
+        </div>
+
+        <div/>
 
 
-    <div id="footer">
-    </div>
     <script>
         $(document).ready(function () {
             $(document).on('change', '.btn-file :file', function () {
@@ -648,6 +569,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>

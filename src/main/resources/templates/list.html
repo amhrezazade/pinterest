@@ -313,15 +313,10 @@
         <div class="holder">
             <nav class="navbar navbar-expand-lg navbar-light fixed-top "
                  style="background-color:#fff;text-align: right; direction: rtl;">
-                <!-- <ul class=" navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item "> -->
-                <a class="nav-link" style="color: black;" href="login.html">ورود/ثبت نام
+                <a class="nav-link" style="color: black;" href="./src/login.html" th:href="@{../src/login}">ورود/ثبت نام
                 </a>
-                <!-- </li>
-                    </ul> -->
-
                 <a class="navbar-brand align-top mt-auto mb-auto" href="#" style="text-align: right;">
-                    <img src="img/Capture.PNG" width="35" height="35" class="d-inline-block align-top ml-2" alt=""
+                    <img src='./img/Capture.PNG' th:src="@{./img/Capture.PNG}" width="35" height="35" class="d-inline-block align-top ml-2" alt=""
                          style="border-radius: 20px;">
                     <p class="d-inline-block mt-auto mb-auto">نام سایت</p>
                 </a>
@@ -330,7 +325,6 @@
                         aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="direction: rtl;">
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="جستجو...">
@@ -338,7 +332,6 @@
                             <span class="fa fa-search"></span>
                         </button>
                     </form>
-
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
                             <a class="nav-link" href="index.html">صفحه اصلی <span
@@ -353,35 +346,31 @@
                                 <p style="display: inline-block;">پروفایل</p>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="profile.html">پروفایل </a>
-                                <a class="dropdown-item" href="editprofile.html"> ویرایش پروفایل </a>
-                                <a class="dropdown-item" href="login.html">خروج از حساب کاربری </a>
+                                <a class="dropdown-item"  href="profile.html" th:href="@{profile}">پروفایل </a>
+                                <a class="dropdown-item"  href="editprofile.html" th:href="@{editprofile}"> ویرایش پروفایل </a>
+                                <a class="dropdown-item" href="#" >خروج از حساب کاربری </a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">دوستان</a>
+                            <a class="nav-link "  href="list.html" th:href="@{list}">دوستان</a>
                         </li>
                         <li class="dropdown mr-2 ml-2 mt-1">
                             <!-- class="dropdown-toggle" -->
-                            <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            <a class="" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false" style="color: black;">
                                 <p style="display: inline-block;">سایر</p>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
                                 <a class="dropdown-item" href="#">تنظیمات </a>
                                 <a class="dropdown-item" href="#"> نوتیفیکیشن ها </a>
-                                <!-- <a class="dropdown-item" href="login.html"></a> -->
                             </div>
                         </li>
                     </ul>
-
                 </div>
-
             </nav>
         </div>
     </div>
 </div>
-
 <div id="content">
     <div class="profile-page">
         <div class="main main-raised">

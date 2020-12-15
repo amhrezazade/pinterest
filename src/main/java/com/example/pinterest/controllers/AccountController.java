@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
@@ -39,7 +40,7 @@ public class AccountController {
 
         System.out.println("x.name : " + x.getUsername());
 
-        model.addAttribute("editprofileModel", new editprofileModel());
+        model.addAttribute("editprofileModel", x);
 
         System.out.println("model set");
 

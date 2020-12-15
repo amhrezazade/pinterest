@@ -41,6 +41,7 @@ public class UserService {
         output.setEmail(user.getEmail());
         output.setPhoneNumber(user.getPhone());
         output.setUsername(user.getUserName());
+        output.setPassword(user.getPassWord());
         return output;
       }
     }
@@ -57,6 +58,7 @@ public class UserService {
         user.setPhone(data.getPhoneNumber());
         user.setUserName(data.getUsername());
         user.setCountry(data.getAge());
+        user.setPassWord(data.getPassword());
         UserRepository.save(user);
         return true;
       }

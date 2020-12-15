@@ -6,6 +6,7 @@ public class editprofileModel {
     private String Email;
     private String Age;
     private String PhoneNumber;
+    private String Password;
 
     public String getUsername() {
         return Username;
@@ -45,5 +46,13 @@ public class editprofileModel {
 
     public void setPhoneNumber(String phoneNumber) {
         PhoneNumber = phoneNumber;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
     }
 }

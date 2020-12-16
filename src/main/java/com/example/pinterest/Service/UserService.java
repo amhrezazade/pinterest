@@ -68,6 +68,11 @@ public class UserService {
 
   public String Register(signup u) {
 
+    List<User> users = UserRepository.findAll();
+    for (User user : (List<User>) users)
+      if (user.getEmail().equals(u.getEmail()))
+        return "";
+
     // Creating new user :
     User user = new User();
     user.setAddress("");

@@ -303,7 +303,7 @@
                     <input id="login__password2" th:field="*{Pass2}" type="password" name="password" class="form__input"
                         placeholder="تکرار رمز عبور" required>
                 </div>
-
+                <p th:text="${message}" style="background-color:#E19899; color:#E80509">خطا</p>
                 <div class="form__field">
                     <input type="submit" value="ثبت نام">
                 </div>

@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
+import com.example.pinterest.Model.UserModel;
 import com.example.pinterest.Model.editprofileModel;
 import com.example.pinterest.Model.loginModel;
 import com.example.pinterest.Model.signup;
@@ -22,28 +24,30 @@ import com.example.pinterest.Service.UserService;
 @RequestMapping({ "/acc" })
 public class AccountController {
 
+    private String LastError = "";
     @Autowired
     private UserService Userservice;
 
-    @GetMapping("/editprofile")
-    public String edit(@CookieValue(value = "token", defaultValue = "Atta") String token, Model model) {
-
+    @GetMapping("/folloerList")
+    public String FollowerList(@CookieValue(value = "token", defaultValue = "Atta") String token, Model model) {
         if (token == null || token.equals(""))
             return "redirect:/acc/login";
 
-        System.out.println("token : " + token);
-
-        editprofileModel x = Userservice.GetEditModel(token);
-
+        List<UserModel> x = Userservice.getAllUsers();
         if (x == null)
             return "redirect:/acc/login";
+        model.addAttribute("users", x);
+        return "list";
+    }
 
-        System.out.println("x.name : " + x.getUsername());
-
+    @GetMapping("/editprofile")
+    public String edit(@CookieValue(value = "token", defaultValue = "Atta") String token, Model model) {
+        if (token == null || token.equals(""))
+            return "redirect:/acc/login";
+        editprofileModel x = Userservice.GetEditModel(token);
+        if (x == null)
+            return "redirect:/acc/login";
         model.addAttribute("editprofileModel", x);
-
-        System.out.println("model set");
-
         return "editprofile";
     }
 
@@ -90,14 +94,26 @@ public class AccountController {
     public String SignUp(Model model) {
 
         model.addAttribute("UserSignUpModel", new signup());
+        model.addAttribute("message", LastError);
         return "signup";
     }
 
     @PostMapping("/signupUser")
     public String SignUp(@ModelAttribute signup data, Model model, HttpServletResponse response) {
 
+        if (data.getPass().equals(data.getPass2())) {
+            LastError = "تکرار رمز عبور اشتباه است";
+            return "redirect:/acc/signup";
+        }
+
         // Register to database :
         String token = Userservice.Register(data);
+
+        if (token == null || token == "") {
+            LastError = "نام کاربری وجود دارد";
+            return "redirect:/acc/signup";
+        }
+
         // create a cookie
         Cookie cookie = new Cookie("token", token);
         // add cookie to response

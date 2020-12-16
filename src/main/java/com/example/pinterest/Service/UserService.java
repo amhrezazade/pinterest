@@ -41,7 +41,7 @@ public class UserService {
         output.setEmail(user.getEmail());
         output.setPhoneNumber(user.getPhone());
         output.setUsername(user.getUserName());
-        output.setPassword(user.getPassWord());
+//        output.setPassword(user.getPassWord());
         return output;
       }
     }
@@ -58,7 +58,7 @@ public class UserService {
         user.setPhone(data.getPhoneNumber());
         user.setUserName(data.getUsername());
         user.setCountry(data.getAge());
-        user.setPassWord(data.getPassword());
+//        user.setPassWord(data.getPassword());
         UserRepository.save(user);
         return true;
       }
@@ -69,9 +69,15 @@ public class UserService {
   public String Register(signup u) {
 
     List<User> users = UserRepository.findAll();
-    for (User user : (List<User>) users)
-      if (user.getEmail().equals(u.getEmail()))
+    for (User user : (List<User>) users) {
+      if (user.getEmail().equals( u.getEmail())) {
+        System.out.println("in if register");
         return "";
+      }
+      System.out.println("user imail : " + user.getEmail());
+      System.out.println("user imail2 : " + u.getEmail());
+    }
+
 
     // Creating new user :
     User user = new User();
@@ -129,5 +135,20 @@ public class UserService {
     }
     return Result;
   }
+
+
+  public String getName(String token){
+    List<User> users = UserRepository.findAll();
+
+    for (User user : (List<User>) users) {
+      if(user.getToken().equals(token)){
+      System.out.println("user found");
+      return user.getEmail();
+
+      }
+    }
+    return "";
+  }
+
 
 }

@@ -42,11 +42,12 @@ public class AccountController {
 
     @GetMapping("/editprofile")
     public String edit(@CookieValue(value = "token", defaultValue = "Atta") String token, Model model) {
+        System.out.println("c ed");
         if (token == null || token.equals(""))
             return "redirect:/acc/login";
         editprofileModel x = Userservice.GetEditModel(token);
         if (x == null)
-            return "redirect:/acc/login";
+            return "redirect:/login";
         model.addAttribute("editprofileModel", x);
         return "editprofile";
     }
@@ -87,7 +88,7 @@ public class AccountController {
         response.addCookie(cookie);
 
         System.out.println("Login OK");
-        return "redirect:/index";
+        return "redirect:/acc/index";
     }
 
     @GetMapping("/signup")
@@ -100,8 +101,10 @@ public class AccountController {
 
     @PostMapping("/signupUser")
     public String SignUp(@ModelAttribute signup data, Model model, HttpServletResponse response) {
+    System.out.println(data.getPass());
+        System.out.println(data.getPass2());
 
-        if (data.getPass().equals(data.getPass2())) {
+        if (data.getPass()==data.getPass2()) {
             LastError = "تکرار رمز عبور اشتباه است";
             return "redirect:/acc/signup";
         }
@@ -111,6 +114,7 @@ public class AccountController {
 
         if (token == null || token == "") {
             LastError = "نام کاربری وجود دارد";
+            System.out.println("controller register");
             return "redirect:/acc/signup";
         }
 
@@ -120,7 +124,18 @@ public class AccountController {
         response.addCookie(cookie);
 
         System.out.println("RegisterOK");
-        return "redirect:/index";
+        return "redirect:/acc/index";
+    }
+
+
+
+    @RequestMapping({"/index" })
+    public String index(@CookieValue(value = "token", defaultValue = "defult token") String token, final Model model) {
+        String accuntName=Userservice.getName(token);
+        model.addAttribute("accuntName",accuntName);
+        System.out.println(token);
+        System.out.println(accuntName);
+        return "index";
     }
 
 }

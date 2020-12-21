@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import com.example.pinterest.Entity.User;
-import com.example.pinterest.Model.UserModel;
 import com.example.pinterest.Model.editprofileModel;
 import com.example.pinterest.Model.loginModel;
 import com.example.pinterest.Model.signup;
@@ -13,6 +12,7 @@ import com.example.pinterest.Repository.IRepositoryUser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class UserService {
@@ -31,17 +31,29 @@ public class UserService {
     return "";
   }
 
+  public String GetImageId(String token) {
+    List<User> users = UserRepository.findAll();
+    for (User user : (List<User>) users) {
+      if (user.getToken().equals(token)) {
+        user.getImage();
+      }
+    }
+    return "user";
+  }
+
   public editprofileModel GetEditModel(String token) {
     List<User> users = UserRepository.findAll();
     for (User user : (List<User>) users) {
       if (user.getToken().equals(token)) {
         editprofileModel output = new editprofileModel();
-        output.setAge(user.getCountry());
-        output.setBio(user.getAddress());
+        output.setName(user.getName());
+        output.setCountry(user.getCountry());
+        output.setAge(String.valueOf(user.getAge()));
+        output.setCity(user.getCity());
+        output.setBio(user.getBio());
         output.setEmail(user.getEmail());
         output.setPhoneNumber(user.getPhone());
         output.setUsername(user.getUserName());
-//        output.setPassword(user.getPassWord());
         return output;
       }
     }
@@ -50,15 +62,18 @@ public class UserService {
 
   public boolean Edit(String token, editprofileModel data) {
     List<User> users = UserRepository.findAll();
-
+    System.out.println("log2");
     for (User user : (List<User>) users)
       if (user.getToken().equals(token)) {
+        System.out.println("log5");
+        user.setName(data.getName());
+        user.setCountry(data.getCountry());
+        user.setAge(Integer.parseInt(data.getAge()));
+        user.setCity(data.getCity());
+        user.setBio(data.getBio());
         user.setEmail(data.getEmail());
-        user.setAddress(data.getBio());
         user.setPhone(data.getPhoneNumber());
-        user.setUserName(data.getUsername());
-        user.setCountry(data.getAge());
-//        user.setPassWord(data.getPassword());
+        user.setName(data.getName());      
         UserRepository.save(user);
         return true;
       }
@@ -70,7 +85,7 @@ public class UserService {
 
     List<User> users = UserRepository.findAll();
     for (User user : (List<User>) users) {
-      if (user.getEmail().equals( u.getEmail())) {
+      if (user.getEmail().equals(u.getEmail())) {
         System.out.println("in if register");
         return "";
       }
@@ -78,18 +93,20 @@ public class UserService {
       System.out.println("user imail2 : " + u.getEmail());
     }
 
-
     // Creating new user :
     User user = new User();
-    user.setAddress("");
+    user.setAge(20);
+    user.setBio("bio");
+    user.setCity("");
+    user.setToken("token");
     user.setCountry("");
     user.setEmail(u.getEmail());
     user.setGender(false);
-    user.setImage("image");
+    user.setImage("user");
     user.setPassWord(u.getPass());
     user.setPhone("");
     user.setUserName("");
-
+    user.setName("name");
     user.setId(NextID());
     user.setToken(GenerateToken());
     UserRepository.save(user);
@@ -97,13 +114,13 @@ public class UserService {
     return user.getToken();
   }
 
-  private String NextID() {
+  private Long NextID() {
     Random r = new Random();
     String output = "";
     for (int i = 0; i < 10; i++) {
       output += r.nextInt(9);
     }
-    return output;
+    return Long.parseLong(output);
   }
 
   public static String GenerateToken() {
@@ -127,28 +144,26 @@ public class UserService {
     return output;
   }
 
-  public List<UserModel> getAllUsers() {
+  public List<User> getAllUsers() {
     List<User> users = UserRepository.findAll();
-    ArrayList<UserModel> Result = new ArrayList<>();
+    ArrayList<User> Result = new ArrayList<>();
     for (User user : (List<User>) users) {
-      Result.add(new UserModel(user));
+      Result.add(user);
     }
     return Result;
   }
 
-
-  public String getName(String token){
+  public String getName(String token) {
     List<User> users = UserRepository.findAll();
 
     for (User user : (List<User>) users) {
-      if(user.getToken().equals(token)){
-      System.out.println("user found");
-      return user.getEmail();
+      if (user.getToken().equals(token)) {
+        System.out.println("user found");
+        return user.getEmail();
 
       }
     }
     return "";
   }
-
 
 }

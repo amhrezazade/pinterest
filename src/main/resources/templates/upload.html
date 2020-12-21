@@ -371,169 +371,21 @@
                 <div class="container">
                     <div class=" justify-content-between ">
                         <div class=" align-items-center back  mt-5">
-                            <a class="mt-5 pt-5" href="profile">
-                                <p class="pt-5"> بازگشت </p>
-                            </a>
-                            <h4 class="text-right">ویرایش اطلاعات </h4>
+                          <a class="mt-5 pt-5" href="profile">
+                          <p class="pt-5"> بازگشت </p>
+                          </a>
+                            <h4 class="text-right">لطفا عکس پروفایل خود را انتخاب کنید&nbsp; </h4>
                         </div>
                     </div>
-
-                    <form action="/acc/editProfileUser" th:action="@{/acc/editProfileUser}"
-                          th:object="${editprofileModel}" method="POST" class="row">
-                        <div class="col-md-6">
-                            <div class="p-3 py-5">
-                                <div class="row mt-3">
-                                    <div class="col-md-6">
-                                        <label class="labels"> نام و نام خانوادگی</label>
-                                        <input th:field="*{Name}" type="text" class="form-control"
-                                               placeholder="  نام و نام خانوادگی     " value="">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="labels"> نام کاربری</label>
-                                        <input th:field="*{Username}" type="text" class="form-control"
-                                               placeholder="..." value="">
-                                    </div>
-                                </div>
-                                <div class="row  mt-5">
-                                    <div class="col-md-12">
-                                        <label class="labels">دسته بندی های مورد علاقه</label>
-                                        <select class="mdb-select md-form form-control" searchable="Search here..">
-                                            <option value="" disabled selected> انتخاب کنید</option>
-                                            <option value="1"> ایران</option>
-                                            <option value="2"> آمریکا</option>
-                                            <option value="3"> مالزی</option>
-                                            <option value="1"> اسپانیا</option>
-                                            <option value="2"> سوئد</option>
-                                            <option value="3"> آلمان</option>
-                                            <option value="1"> تاجیکستان</option>
-                                            <option value="2"> انگلیس</option>
-                                            <option value="3"> سومالی</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row  mt-5">
-                                    <div class="col-md-12">
-                                        <label class="labels">متن توضیحات</label>
-                                        <input th:field="*{Bio}" type="text" class="form-control" placeholder="بیو"
-                                               value="">
-                                    </div>
-                                </div>
-                                <div class="row mt-5">
-                                    <div class="col-md-12 ">
-                                        <label class="labels">حوزه فعالیت</label>
-                                        <inputs type="text" class="form-control"
-                                               placeholder="حوزه ی فعالیت خود را وارد کنید" value="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="p-3 py-5">
-                                <div class="row d-flex">
-                                    <div class="col-md-8">
-                                        <div class="row flex" style="text-align: right; direction: rtl;">
-                                            <label class="labels" style="text-align: right; direction: rtl;">آپلود
-                                                یا تغیر تصویر پروفایل</label>
-                                        </div>
-                                        <div class="row mt-3 flex"
-                                             style="text-align: right; direction: rtl;float: right;">
-                                            <div class="form-group flex"
-                                                 style="text-align: right; direction: rtl;float: right;">
-                                                <div class="input-group">
-                                                        <span class="input-group-btn">
-															<input th:field="*{Image}" type="file" name="Image" /><br/>تصویر پروفایل خود را انتخاب کنید<br/>
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-4">
-                                        <img id='img-upload' class="mr-2" width="80px" height="80px"
-                                             style="direction: rtl;float: right; border-radius: 45px;"
-                                             src="./img/sample-imgl.jpg">
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
-
-                                    <div class="col-md-6">
-                                        <label class="labels">سن </label>
-                                        <input th:field="*{Age}" type="text" class="form-control" value=""
-                                               placeholder="سن خودرا به عدد وارد کنید ">
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label class="labels">جنسیت </label>
-                                        <select class="mdb-select md-form form-control" searchable="Search here..">
-                                            <option value="" disabled selected> انتخاب کنید</option>
-                                            <option value="1"> زن</option>
-                                            <option value="2"> مرد</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mt-5">
-                                    <div class="col-md-6">
-                                        <label class="labels">آدرس ایمیل</label>
-                                        <input th:field="*{Email}" type="text" class="form-control" value=""
-                                               placeholder="google@gmail.com ">
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label class="labels">شماره تلفن</label>
-                                        <input th:field="*{PhoneNumber}" type="text" class="form-control"
-                                               placeholder="    --- --- ----98+  " value="">
-                                    </div>
-                                </div>
-                                <div class="row mt-5">
-                                    <div class="col-md-6"><label class="labels">کشور</label>
-                                        <input th:field="*{Country}" type="text" class="form-control"
-                                               placeholder="   نام کشور  " value="">
-                                        <!--  <select class="mdb-select md-form form-control">
-                                            <option value="" disabled selected>
-                                                کشور خود را انتخاب کنید
-                                            </option>
-                                            <option value="1"> ایران</option>
-                                            <option value="2"> آمریکا</option>
-                                            <option value="3"> مالزی</option>
-                                            <option value="1"> اسپانیا</option>
-                                            <option value="2"> سوئد</option>
-                                            <option value="3"> آلمان</option>
-                                            <option value="1"> تاجیکستان</option>
-                                            <option value="2"> انگلیس</option>
-                                            <option value="3"> سومالی</option>
-                                        </select> -->
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="labels">شهر/ناحیه</label>
-                                        <input th:field="*{City}" type="text" class="form-control"
-                                               placeholder="   شهر محل زندگی  " value="">
-                                        <!--  <select class="mdb-select md-form form-control">
-                                            <option value="" disabled selected>
-                                                شهر خود را انتخاب کنید
-                                            </option>
-                                            <option value="1"> ایران</option>
-                                            <option value="2"> آمریکا</option>
-                                            <option value="3"> مالزی</option>
-                                            <option value="1"> اسپانیا</option>
-                                            <option value="2"> سوئد</option>
-                                            <option value="3"> آلمان</option>
-                                            <option value="1"> تاجیکستان</option>
-                                            <option value="2"> انگلیس</option>
-                                            <option value="3"> سومالی</option>
-                                        </select> -->
-                                    </div>
-                                </div>
-                                <div class="row m-6 text-center mt-5">
-                                    <button class="btn btn-primary mr-2 profile-button" id="addbtn" type="submit">
-                                        ذخیره
-                                    </button>
-                                    <button class="btn btn-primary profile-button" id="addbtn" type="cancel">
-                                        <a href="index" style="color: white">لغو</a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+					<form method="POST" action="/upload" enctype="multipart/form-data">
+						<input type="file" name="file" /><br/><br/>
+						<div class="row m-6 text-center mt-5">
+							<button class="btn btn-primary mr-2 profile-button" id="addbtn" type="submit">ذخیره</button>
+							<button class="btn btn-primary profile-button" id="addbtn" type="cancel">
+								<a href="index" style="color: white">لغو</a>
+							</button>
+						</div>
+					</form>
                 </div>
             </div>
         </div>

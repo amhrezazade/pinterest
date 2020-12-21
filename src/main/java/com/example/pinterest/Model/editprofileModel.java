@@ -1,12 +1,41 @@
 package com.example.pinterest.Model;
 
+
+
 public class editprofileModel {
     private String Username;
+    private String Name;
     private String Bio;
     private String Email;
     private String Age;
+    private String Country;
+    private String City;
     private String PhoneNumber;
-    private String Password;
+
+    public String getCity() {
+        return City;
+    }
+
+    public void setCity(String city) {
+        City = city;
+    }
+
+    public String getCountry() {
+        return Country;
+    }
+
+    public void setCountry(String country) {
+        Country = country;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
 
     public String getUsername() {
         return Username;
@@ -48,11 +77,4 @@ public class editprofileModel {
         PhoneNumber = phoneNumber;
     }
 
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
-    }
 }

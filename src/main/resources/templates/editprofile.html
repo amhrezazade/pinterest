@@ -330,7 +330,7 @@
                             <!-- class="dropdown-toggle" -->
                             <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false" style="color: black;">
-                                <img src="https://img.icons8.com/material-outlined/24/000000/male-user.png"
+                                <img th:src="${imageurl}" src="https://img.icons8.com/material-outlined/24/000000/male-user.png"
                                      style="width: 25px; " />
                                 <p style="display: inline-block;">پروفایل</p>
                             </a>
@@ -418,13 +418,6 @@
                                                value="">
                                     </div>
                                 </div>
-                                <div class="row mt-5">
-                                    <div class="col-md-12 ">
-                                        <label class="labels">حوزه فعالیت</label>
-                                        <inputs type="text" class="form-control"
-                                               placeholder="حوزه ی فعالیت خود را وارد کنید" value="">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -441,7 +434,10 @@
                                                  style="text-align: right; direction: rtl;float: right;">
                                                 <div class="input-group">
                                                         <span class="input-group-btn">
-															<input th:field="*{Image}" type="file" name="Image" /><br/>تصویر پروفایل خود را انتخاب کنید<br/>
+															<button class="btn btn-primary profile-button" id="addbtn">
+															<a href="/UploadImage" th:href="@{UploadImage}" style="color: white">تغییر عکس پروفایل</a>
+															</button>
+															<p th:text="${message}">تصویر پروفایل خود را انتخاب کنید</p>
                                                         </span>
                                                 </div>
                                             </div>
@@ -451,7 +447,7 @@
                                     <div class="col-md-4">
                                         <img id='img-upload' class="mr-2" width="80px" height="80px"
                                              style="direction: rtl;float: right; border-radius: 45px;"
-                                             src="./img/sample-imgl.jpg">
+                                             th:src="${imageurl}">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -528,7 +524,7 @@
                                         ذخیره
                                     </button>
                                     <button class="btn btn-primary profile-button" id="addbtn" type="cancel">
-                                        <a href="index" style="color: white">لغو</a>
+                                        <a href="index" th:href="@{index}" style="color: white">لغو</a>
                                     </button>
                                 </div>
                             </div>

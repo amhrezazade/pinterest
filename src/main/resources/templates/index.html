@@ -285,7 +285,7 @@
                                 <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false" style="color: black;">
                                     <img src="https://img.icons8.com/material-outlined/24/000000/male-user.png"
-                                        style="width: 25px; " />
+                                        th:src="${imageurl}" style="width: 25px; " />
                                     <p style="display: inline-block;" th:text="${accuntName}">پروفایل</p>
 
                                 </a>
@@ -293,7 +293,7 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item"  href="profile" th:href="@{profile}">پروفایل </a>
                                     <a class="dropdown-item"  href="editprofile" th:href="@{editprofile}"> ویرایش پروفایل </a>
-                                    <a class="dropdown-item" href="/acc/login" th:href="@{/acc/login}">خروج از حساب کاربری </a>
+                                    <a class="dropdown-item" href="/acc/logout" th:href="@{/acc/logout}">خروج از حساب کاربری </a>
                                 </div>
                             </li>
                             <li class="nav-item">

@@ -31,14 +31,25 @@ public class UserService {
     return "";
   }
 
-  public String GetImageId(String token) {
+  public void setProfileImage(String token,String Image)
+  {
     List<User> users = UserRepository.findAll();
     for (User user : (List<User>) users) {
       if (user.getToken().equals(token)) {
-        user.getImage();
+        user.setImage(Image);
+        UserRepository.save(user);
       }
     }
-    return "user";
+  }
+
+  public String GetImageURL(String token) {
+    List<User> users = UserRepository.findAll();
+    for (User user : (List<User>) users) {
+      if (user.getToken().equals(token)) {
+        return "/Image?id=" + user.getImage();
+      }
+    }
+    return "/Image?id=user";
   }
 
   public editprofileModel GetEditModel(String token) {
@@ -114,7 +125,7 @@ public class UserService {
     return user.getToken();
   }
 
-  private Long NextID() {
+  public Long NextID() {
     Random r = new Random();
     String output = "";
     for (int i = 0; i < 10; i++) {
@@ -159,7 +170,7 @@ public class UserService {
     for (User user : (List<User>) users) {
       if (user.getToken().equals(token)) {
         System.out.println("user found");
-        return user.getEmail();
+        return user.getName();
 
       }
     }

@@ -331,7 +331,7 @@
                             <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false" style="color: black;">
                                 <img src="https://img.icons8.com/material-outlined/24/000000/male-user.png"
-                                     style="width: 25px; " />
+                                     th:src="${imageurl}" style="width: 25px; " />
                                 <p style="display: inline-block;">پروفایل</p>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -371,18 +371,18 @@
                 <div class="container">
                     <div class=" justify-content-between ">
                         <div class=" align-items-center back  mt-5">
-                          <a class="mt-5 pt-5" href="profile">
+                          <a class="mt-5 pt-5" href="/editprofile">
                           <p class="pt-5"> بازگشت </p>
                           </a>
                             <h4 class="text-right">لطفا عکس پروفایل خود را انتخاب کنید&nbsp; </h4>
                         </div>
                     </div>
-					<form method="POST" action="/upload" enctype="multipart/form-data">
+					<form method="POST" action="/uploadfile"  enctype="multipart/form-data">
 						<input type="file" name="file" /><br/><br/>
 						<div class="row m-6 text-center mt-5">
-							<button class="btn btn-primary mr-2 profile-button" id="addbtn" type="submit">ذخیره</button>
+							<button class="btn btn-primary mr-2 profile-button" id="addbtn" type="submit">آپلود</button>
 							<button class="btn btn-primary profile-button" id="addbtn" type="cancel">
-								<a href="index" style="color: white">لغو</a>
+								<a href="/editprofile" th:href="@{editprofile}" style="color: white">لغو</a>
 							</button>
 						</div>
 					</form>
